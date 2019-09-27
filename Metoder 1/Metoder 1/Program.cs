@@ -1,26 +1,23 @@
 ﻿using System;
-
-namespace metoder
+namespace metoder 2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            double radie = 2.4;
-            Console.WriteLine("Cirkelns omkrets: " + CirkelOmkrets(radie));
-            Console.WriteLine("Cirkelns area: " + CirkelArea(radie));
+            Console.Write("Skriv tal ett: ");
+            double nummer1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Skriv tal två: ");
+            double nummer2 = Convert.ToDouble(Console.ReadLine());
+            ChangePlace(ref nummer1, ref nummer2);
+            Console.WriteLine("Nu bytte talen plats!");
+            Console.WriteLine($"Tal ett är nu istället {nummer1} och tal två är nu istället {nummer2}");
         }
-
-        static double CirkelOmkrets(double radie)
+        static void ChangePlace(ref double nummer3, ref double nummer4)
         {
-            return (radie * 2 * 3.14);
-
+            double tempNumber = nummer3;
+            nummer3 = nummer4;
+            nummer4 = tempNumber;
         }
-        static double CirkelArea(double radie)
-        {
-            return (radie * radie * 3.14);
-        }
-
-
     }
 }
